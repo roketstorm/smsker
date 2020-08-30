@@ -1,15 +1,30 @@
-# smsker
+# Smsker
 
-A new flutter plugin project.
+Send SMS within the Flutter application.
 
-## Getting Started
+- **Android** sender based on **SmsManager**
+- **iOS** sender based on **MFMessageComposeViewController**
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+#  🏰 Usage
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Import `package:smsker/smsker.dart`, call `sendSms()` within `async` method:
+
+```dart
+import 'package:smsker/smsker.dart';
+
+_sendMessage() async {
+    await Smsker.sendSms("81234567890", "Link! Wake Up!");
+}
+
+RaisedButton(
+    child: Text("Save the Kingdom!"),
+    onPressed: () {
+        _sendMessage();
+    }
+)
+```
+
+# 🐞 Known Issues
+
+On **iOS** after showing modal window of **MFMessageComposeViewController** system generates new view under top container. That is what for you need additional top-down swipe to return to Flutter application.
 

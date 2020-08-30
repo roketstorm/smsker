@@ -11,4 +11,9 @@ class Smsker {
     final String version = await _channel.invokeMethod('getPlatformVersion');
     return version;
   }
+
+  static Future<int> sendSms(int phone) async {
+    final int phoneSend = await _channel.invokeMethod('sendSms', [phone]);
+    return phoneSend;
+  }
 }

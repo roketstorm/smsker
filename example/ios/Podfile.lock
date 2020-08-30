@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - smsker (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - smsker (from `.symlinks/plugins/smsker/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  smsker:
+    :path: ".symlinks/plugins/smsker/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  smsker: 613bad0df184e468f5a3e1b1749a462b3661e50e
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.9.2

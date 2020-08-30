@@ -42,6 +42,10 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  void _sendMessage() async {
+    await Smsker.sendSms(123);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,7 +54,11 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: RaisedButton(
+            child: Text("Send My SMS"),
+            onPressed: () {
+            _sendMessage();
+          }),
         ),
       ),
     );

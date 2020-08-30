@@ -1,5 +1,6 @@
 package com.roketstorm.smsker
 
+import android.telephony.SmsManager
 import androidx.annotation.NonNull;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
@@ -42,6 +43,10 @@ public class SmskerPlugin: FlutterPlugin, MethodCallHandler {
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
+    } else if (call.method == "sendSms") {
+      var smsManager = SmsManager.getDefault()
+      smsManager.sendTextMessage("123456", null, "Test smsker", null, null)
+      result.success(100500)
     } else {
       result.notImplemented()
     }
