@@ -7,17 +7,9 @@ void main() {
 
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  setUp(() {
-    channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return '42';
-    });
-  });
+  setUp(() {});
 
-  tearDown(() {
-    channel.setMockMethodCallHandler(null);
-  });
+  tearDown(() {});
 
-  test('getPlatformVersion', () async {
-    expect(await Smsker.platformVersion, '42');
-  });
+  test('sendSms', () async {});
 }
