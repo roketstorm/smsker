@@ -1,6 +1,7 @@
 
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
 class Smsker {
@@ -12,8 +13,8 @@ class Smsker {
     return version;
   }
 
-  static Future<int> sendSms(int phone) async {
-    final int phoneSend = await _channel.invokeMethod('sendSms', [phone]);
-    return phoneSend;
+  static Future<String> sendSms({@required String phone, @required String message}) async {
+    final String phoneSent = await _channel.invokeMethod('sendSms', [phone, message]);
+    return phoneSent;
   }
 }

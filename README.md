@@ -14,7 +14,9 @@ Import `package:smsker/smsker.dart`, call `sendSms()` within `async` method:
 import 'package:smsker/smsker.dart';
 
 _sendMessage() async {
-    await Smsker.sendSms("81234567890", "Link! Wake Up!");
+    await Smsker.sendSms(
+        phone: "81234567890", 
+        message: "Link! Wake Up!");
 }
 
 RaisedButton(
