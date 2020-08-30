@@ -27,6 +27,13 @@ RaisedButton(
 )
 ```
 
+# 🛡️ Permissions
+
+Don't forget to add **Android** `SEND_SMS` permission to your **AndroidManifest.xml**
+```xml
+<uses-permission android:name="android.permission.SEND_SMS" />
+```
+
 # 🐞 Known Issues
 
 On **iOS** after showing modal window of **MFMessageComposeViewController** system generates new view under top container. That is what for you need additional top-down swipe to return to Flutter application.
